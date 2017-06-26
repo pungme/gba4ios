@@ -605,7 +605,7 @@ NSString *const GBASettingsDropboxStatusChangedNotification = @"GBASettingsDropb
 }
 
 
-- (NSUInteger)navigationControllerSupportedInterfaceOrientations:(UINavigationController *)navigationController
+- (UIInterfaceOrientationMask)navigationControllerSupportedInterfaceOrientations:(UINavigationController *)navigationController
 {
     return [[navigationController topViewController] supportedInterfaceOrientations];
 }

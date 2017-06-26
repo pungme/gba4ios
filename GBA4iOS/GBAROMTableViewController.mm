@@ -97,7 +97,7 @@ dispatch_queue_t directoryContentsChangedQueue() {
         self.currentDirectory = documentsDirectory; 
         self.showFileExtensions = YES;
         self.showFolders = NO;
-        self.showSectionTitles = NO;
+        self.showSectionTitles = YES;
         self.showUnavailableFiles = YES;
         
         _downloadProgress = [[NSProgress alloc] initWithParent:nil userInfo:nil];
@@ -236,6 +236,8 @@ dispatch_queue_t directoryContentsChangedQueue() {
         
         frame;
     });
+    // Fixes a bug with the status bar hiding after the transition between emulation view and the ROM tableview when the device is rotated while emulation is running
+    [[UIApplication sharedApplication] setStatusBarHidden:[self prefersStatusBarHidden]];
 }
 
 - (BOOL)prefersStatusBarHidden

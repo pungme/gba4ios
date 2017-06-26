@@ -62,7 +62,7 @@ static GBAAppDelegate *_appDelegate;
     _appDelegate = self;
     
     //[UIView toggleViewMainThreadChecking];
-    
+    NSLog(@"%@",[[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject]);
     if (![[NSUserDefaults standardUserDefaults] objectForKey:@"showedWarningAlert"])
     {
         dispatch_async(dispatch_get_main_queue(), ^{
